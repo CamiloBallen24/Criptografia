@@ -10,6 +10,7 @@ package Tools;
  * @author andre
  */
 public class BasicOperations {
+    
     public static String XOR(String a, String b){
         String result = "";
         for(int i =0; i<a.length(); i++){
@@ -35,7 +36,6 @@ public class BasicOperations {
         int result_dec = a_dec + b_dec;
         return Conversor.dec_to_base_n(result_dec, base);
     }
-    
     
     public static int inversoModular(int n, int mod){
         for (int i = 0; i < mod; i++) {
@@ -74,7 +74,7 @@ public class BasicOperations {
         return poly;
     }
     
-    public static String stringToSuperIndice(String string){
+    private static String stringToSuperIndice(String string){
         String[] superIndicesKey = 
             {   "\u2070",
                 "\u00B9",
@@ -103,6 +103,7 @@ public class BasicOperations {
         }
         return complete;  
     }
+    
     public static String sumCadenaHex(String a, String b){
         
         String c = "";
@@ -133,6 +134,27 @@ public class BasicOperations {
         
         return c;
     }
+    
+    public static String getAllDivisor(long n){
+        String divisors_initial = "";
+        String divisors_final = "";
+        
+        long raiz = (long) Math.sqrt(n);
+        
+        for(int i=1; i<=raiz; i++){
+            System.out.println("i: " + i + "    " + raiz);
+            if(n%i == 0){
+                divisors_initial = divisors_initial + i + "\n";
+                divisors_final = (long)(n/i) + "\n" + divisors_final;
+                
+            }
+        }
+    
+        return divisors_initial + divisors_final;
+    }
+    
+    
+     
     
     
   

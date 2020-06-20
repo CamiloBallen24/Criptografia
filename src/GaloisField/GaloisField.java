@@ -121,6 +121,43 @@ public class GaloisField {
         }
     }
 
+    
+    public String powerMod(String a, long b){
+        String multiplicationAux = "" ;
+        String residuoAux = moduloPolynomial(Conversor.completeString(a, (2*n-1)), this.poly, this.p, this.n);
+        
+        String curr = residuoAux;
+        String res = this.elements[1];
+        
+        while(b>0){ 
+            if((b%2) == 1){
+                int element_1 = Conversor.base_n_to_dec(curr, this.p);
+                int element_2 = Conversor.base_n_to_dec(res, this.p);
+                res = this.multiplicationTable[element_1][element_2];
+            }
+            int element_1 = Conversor.base_n_to_dec(curr, this.p);
+            curr = this.multiplicationTable[element_1][element_1];
+            b = (long)b/2;
+        }
+        return res;
+    }
+    
+    
+    /*
+    public static long powerMod(long a, long b, long n){
+        long curr = a % n;
+        long res = 1;
+        
+        while(b>0){ 
+            if((b%2) == 1){
+                res = (res*curr) % n;
+            }
+            curr = (curr * curr) % n;
+            b = (long)b/2;
+        }
+        return res;
+    }
+    */
 
     //Maneras de Mostrar la Suma
     //Mostrar en consola

@@ -77,7 +77,7 @@ public class KeyGenerator {
         //Se convierte a HEX
         y_0 = Conversor.base_a_to_base_b(y_0, 2, 16);
         // Se complenta el String Y0
-        if(y_0.length() == 1){y_0 = "0"+y_0;}
+        y_0 = Conversor.completeString(y_0, 2);
         //Se guarda
         y[0] = y_0;
         

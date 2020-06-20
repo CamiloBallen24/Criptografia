@@ -116,7 +116,7 @@ public class TestPseudoKey {
                 i=n+1;
             }   
         }
-        
+        System.out.println("k =" + k);
         key = key + "2";
         
         double x = 0;
@@ -156,7 +156,6 @@ public class TestPseudoKey {
            
             x = x + (Math.pow((bi-e[i-1]), 2)/(e[i-1])) + ((Math.pow((gi-e[i-1]), 2))/(e[i-1]));
             
-            System.out.println(bi + "   " + gi);
         }
         
         System.out.println("X: " + x);
